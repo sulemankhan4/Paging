@@ -19,9 +19,8 @@ class NewsActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.setHasFixedSize(true)
         val adapter = NewsAdapter(this)
-
-        newsViewModel.itemPagedList.observe(this, Observer {
-            adapter.submitList(it)
+        newsViewModel.responseList.observe(this, Observer {
+            adapter.submitData(lifecycle, it)
         })
         recyclerView?.adapter = adapter
     }

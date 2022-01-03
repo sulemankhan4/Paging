@@ -8,6 +8,7 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.paging.PagedListAdapter
+import androidx.paging.PagingDataAdapter
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
@@ -15,7 +16,7 @@ import com.droom.pagingcodelab.R
 import com.droom.pagingcodelab.model.NewsModel
 
 class NewsAdapter(private val mCtx: Context) :
-    PagedListAdapter<NewsModel, NewsAdapter.ItemViewHolder>(
+    PagingDataAdapter<NewsModel, NewsAdapter.ItemViewHolder>(
         DIFF_CALLBACK
     ) {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ItemViewHolder {
