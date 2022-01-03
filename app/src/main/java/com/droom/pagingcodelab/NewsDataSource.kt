@@ -10,7 +10,6 @@ class NewsDataSource : PagingSource<Int, NewsModel>() {
     companion object {
         var PAGE_SIZE = 100
         const val ROWS_PER_PAGE = 10
-        private const val FIRST_PAGE = 1
         private const val SITE_NAME = "from_discovery"
         const val SUBMIT_HASH = "f2768d9b3637c7be0bcb24f4a58c1618"
     }
@@ -46,7 +45,7 @@ class NewsDataSource : PagingSource<Int, NewsModel>() {
 
 
         } catch (e: Exception) {
-
+            return LoadResult.Error(e)
         }
         return LoadResult.Page(
             data = emptyList(),
