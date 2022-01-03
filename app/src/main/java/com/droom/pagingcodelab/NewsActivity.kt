@@ -19,7 +19,7 @@ class NewsActivity : AppCompatActivity() {
      *  5) Built in support for loading state headers, footers and list separators.
      *
      *
-     *  Steps to migrate to paging 2 to paging 3
+     *  Steps to migrate to paging 2 to paging 3 ( Refer migration drawable )
      *  1) Data Source -> In data source implement, PagingSource instead of PageKeyedDataSource which will remove loadInitial, loadBefore, load After methods and will add getRefreshKey and load method.
      *      We need to do api call in load method
      *      This method handles load initial, load before and load after of paging 2.
